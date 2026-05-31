@@ -1,5 +1,5 @@
 app = "naukri-automation"
-primary_region = "sin"  # Mumbai region = Indian IP ✅
+primary_region = "maa"  # Mumbai region = Indian IP ✅
 
 [build]
   dockerfile = "Dockerfile"
