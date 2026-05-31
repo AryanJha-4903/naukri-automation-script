@@ -1,0 +1,16 @@
+app = "naukri-automation"
+primary_region = "bom"  # Mumbai region = Indian IP ✅
+
+[build]
+  dockerfile = "Dockerfile"
+
+[deploy]
+  strategy = "immediate"
+
+# Run as a cron machine — daily at 9:00 AM IST (3:30 AM UTC)
+[machines]
+  schedule = "0 3 * * *"
+  size = "shared-cpu-1x"
+
+[env]
+  TZ = "Asia/Kolkata"
