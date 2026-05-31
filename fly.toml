@@ -1,4 +1,4 @@
-$content = @"
+# $content = @"
 app = "naukri-automation"
 
 [build]
@@ -14,5 +14,5 @@ app = "naukri-automation"
 
 [env]
   TZ = "Asia/Kolkata"
-"@
-Set-Content -Path "fly.toml" -Value $content
+# "@
+# Set-Content -Path "fly.toml" -Value $content
