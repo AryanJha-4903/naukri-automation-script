@@ -1,5 +1,5 @@
+$content = @"
 app = "naukri-automation"
-primary_region = "bom"  # Mumbai region = Indian IP ✅
 
 [build]
   dockerfile = "Dockerfile"
@@ -14,3 +14,5 @@ primary_region = "bom"  # Mumbai region = Indian IP ✅
 
 [env]
   TZ = "Asia/Kolkata"
+"@
+Set-Content -Path "fly.toml" -Value $content
