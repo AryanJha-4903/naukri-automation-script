@@ -11,7 +11,7 @@ EMAIL           = os.getenv("EMAIL")
 APP_PASSWORD    = os.getenv("APP_PASSWORD")
 NAUKRI_EMAIL    = os.getenv("NAUKRI_EMAIL")
 NAUKRI_PASSWORD = os.getenv("NAUKRI_PASSWORD")
-RESUME_PATH     = os.getenv("RESUME_PATH") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "resume.pdf")
+RESUME_PATH     = os.getenv("RESUME_PATH") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "Arya_Koutilya_Jha_Resume.pdf")
 
 # ─────────────────────────────────────────────
 # EMAIL
