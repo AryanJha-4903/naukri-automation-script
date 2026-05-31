@@ -1,0 +1,38 @@
+name: Naukri Daily Profile Update
+
+on:
+  schedule:
+    - cron: '30 3 * * *'  # 9:00 AM IST = 3:30 AM UTC every day
+  workflow_dispatch:       # allows manual trigger from GitHub UI anytime
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browser
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Create .env file from secrets
+        run: |
+          echo "EMAIL=${{ secrets.EMAIL }}"                   >> .env
+          echo "APP_PASSWORD=${{ secrets.APP_PASSWORD }}"     >> .env
+          echo "NAUKRI_EMAIL=${{ secrets.NAUKRI_EMAIL }}"     >> .env
+          echo "NAUKRI_PASSWORD=${{ secrets.NAUKRI_PASSWORD }}" >> .env
+
+      - name: Run Naukri update
+        run: python naukri_automation.py
